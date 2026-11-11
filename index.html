@@ -40,6 +40,7 @@
   ol li { margin-bottom: .75rem; }
   details { margin-top: 1.5rem; }
   summary { cursor: pointer; font-weight: 600; }
+  .status { display: inline-block; font-size: .8rem; font-weight: 600; border: 1px solid var(--line); border-radius: 999px; padding: 0 .5rem; }
   .small { font-size: .9rem; color: var(--muted); }
   footer { margin-top: 4rem; border-top: 1px solid var(--line); padding-top: 1rem; }
 </style>
@@ -48,12 +49,11 @@
 <main>
   <header>
     <h1>Things They Don't Teach You in School</h1>
-    <p class="lead">Free courses on the practical stuff school skipped: tax, money, investing, politics, health and nutrition. Your AI assistant asks what you need, finds the courses for your country, and tutors you at your own pace.</p>
+    <p class="lead">Free courses on the practical stuff school skipped: tax, money, investing, your rights, wellbeing and more. Your AI assistant asks what you need, finds the courses for your country, and tutors you at your own pace.</p>
   </header>
 
   <div class="warn" role="note">
-    <strong>Under development. Please don't rely on these courses yet.</strong>
-    They haven't been reviewed by qualified professionals and may contain mistakes.
+    <strong>Beta.</strong> Each course has a status. <strong>Draft</strong> courses haven't been reviewed by qualified professionals yet and may contain mistakes, so please don't rely on them for real decisions. <strong>Published</strong> courses have been reviewed.
   </div>
 
   <h2 id="start">Start learning</h2>
@@ -80,7 +80,35 @@ claude</code></pre>
   <div class="cards">
     <div class="card">
       <h3><a href="https://github.com/things-they-dont-teach-you/south-african-tax">South African tax</a></h3>
-      <p>Brackets, your payslip, filing a return, deductions, freelance income, dealing with SARS. In development.</p>
+      <p>Brackets, your payslip, filing a return, deductions, freelance income, dealing with SARS. <span class="status">Draft</span></p>
+    </div>
+    <div class="card">
+      <h3><a href="https://github.com/things-they-dont-teach-you/south-african-money">South African money</a></h3>
+      <p>Budgets, bank accounts, credit, debt, saving, stokvels, insurance and scams. <span class="status">Draft</span></p>
+    </div>
+    <div class="card">
+      <h3><a href="https://github.com/things-they-dont-teach-you/south-african-investing">South African retirement and investing</a></h3>
+      <p>Retirement funds, tax-free savings, unit trusts and fees. <span class="status">Draft</span></p>
+    </div>
+    <div class="card">
+      <h3><a href="https://github.com/things-they-dont-teach-you/south-african-rights-at-work">Your rights at work in South Africa</a></h3>
+      <p>Contracts, pay, leave, dismissal, harassment, UIF and the CCMA. <span class="status">Draft</span></p>
+    </div>
+    <div class="card">
+      <h3><a href="https://github.com/things-they-dont-teach-you/south-african-privacy-rights">Your privacy rights in South Africa</a></h3>
+      <p>POPIA, spam calls, access requests, the Information Regulator and ID fraud. <span class="status">Draft</span></p>
+    </div>
+    <div class="card">
+      <h3><a href="https://github.com/things-they-dont-teach-you/managing-stress">Managing stress</a></h3>
+      <p>What stress does, when it's more than stress, ways to cope, and where to get help. <span class="status">Draft</span></p>
+    </div>
+    <div class="card">
+      <h3><a href="https://github.com/things-they-dont-teach-you/resolving-conflict">Resolving conflict</a></h3>
+      <p>Handling conflict and saying hard things clearly, practised in role-plays. <span class="status">Draft</span></p>
+    </div>
+    <div class="card">
+      <h3><a href="https://github.com/things-they-dont-teach-you/managing-time">Managing time</a></h3>
+      <p>A time audit, planning a week on your phone, procrastination, focus and rest. <span class="status">Draft</span></p>
     </div>
   </div>
   <p class="small">More countries and subjects are on the way. Missing something? <a href="https://github.com/things-they-dont-teach-you/enrol/issues/new?template=request-course.yml">Request a course</a>.</p>
@@ -93,7 +121,7 @@ claude</code></pre>
     </div>
     <div class="card">
       <h3>Spotted a mistake?</h3>
-      <p><a href="https://github.com/things-they-dont-teach-you/south-african-tax/issues/new?template=fix-lesson.yml">Report it</a> with a link to the official source.</p>
+      <p>Open the course on GitHub and use the "Something is wrong or out of date" issue form, with a link to the official source, or use the form below.</p>
     </div>
     <div class="card">
       <h3>Write a course</h3>
