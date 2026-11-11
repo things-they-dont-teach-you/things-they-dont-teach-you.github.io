@@ -46,7 +46,7 @@ again what they've already told you.
 Ask these in order:
 
 ```
-1. Where do you live or pay tax?
+1. Which country do you want to learn about? (pick any; it can be somewhere you don't live yet)
    a) South Africa  b) United Kingdom  c) United States  d) Somewhere else
 2. What do you want to learn about? (pick any)
    a) Tax  b) Money and budgeting  c) Retirement and investing  d) Rights at work
