@@ -159,8 +159,18 @@ def is_planned(repo):
     return has_subject(repo) and "planned" in repo["topics"]
 
 
+STATUSES = ("planned", "draft", "published")
+
+
+def course_status(repo):
+    """planned: not written; draft: written, not yet reviewed by a professional; published: reviewed.
+    No status topic counts as draft, so an unreviewed course can never show as published."""
+    return next((s for s in STATUSES if s in repo["topics"]), "draft")
+
+
 def start_page(courses, planned=()):
-    lines = [f"- **{c['name']}**: {c['description']} ({', '.join(c['topics'])}). Address: {course_url(c['name'])}" for c in courses]
+    lines = [f"- **{c['name']}**: {c['description']} ({', '.join(t for t in c['topics'] if t not in STATUSES)}). "
+             f"Status: {course_status(c)}. Address: {course_url(c['name'])}" for c in courses]
     planned_lines = [f"- **{p['name']}** ({', '.join(t for t in p['topics'] if t != 'planned')}): https://github.com/{ORG}/{p['name']}" for p in planned]
     return ((HERE / "chat/start.md").read_text()
             .replace("{courses}", "\n".join(lines) or "None yet.")

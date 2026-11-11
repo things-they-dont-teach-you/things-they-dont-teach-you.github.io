@@ -132,6 +132,14 @@ def test_is_course():
     assert not build.is_planned({"topics": ["subject-tax", "country-za"], "archived": False})
 
 
+def test_course_status():
+    assert build.course_status({"topics": ["subject-tax", "planned"]}) == "planned"
+    assert build.course_status({"topics": ["subject-tax", "published"]}) == "published"
+    assert build.course_status({"topics": ["subject-tax", "draft"]}) == "draft"
+    # A course with no status topic is unreviewed, so it must never show as published.
+    assert build.course_status({"topics": ["subject-tax"]}) == "draft"
+
+
 def test_start_page_lists_courses():
     page = build.start_page(
         [{"name": "demo-tax", "description": "Demo", "topics": ["subject-tax", "country-za"]}],
@@ -139,6 +147,7 @@ def test_start_page_lists_courses():
     )
     assert f"{SITE}/demo-tax.md" in page
     assert "Demo" in page and "country-za" in page
+    assert "Status: draft" in page
     ready, planned = page.split("## Planned courses")
     assert "uk-tax" not in ready
     assert "https://github.com/things-they-dont-teach-you/uk-tax" in planned
@@ -154,5 +163,6 @@ if __name__ == "__main__":
     test_real_diagrams_are_allowed()
     test_html_edition()
     test_is_course()
+    test_course_status()
     test_start_page_lists_courses()
     print("ok")
